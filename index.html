@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Nations Hub - Discover Legendary Players Worldwide</title>
+    <meta name="description" content="Explore an interactive world map of football legends. Discover players from every nation, view detailed profiles, and compare your favorite stars.">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="nav-brand" href="#home">
+                <div class="nav-logo">⚽</div>
+                <span class="nav-title">FN Hub</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="nav nav-pills nav-pills-custom">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">
+                            <i class="bi bi-trophy me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#map">
+                            <i class="bi bi-globe me-1"></i> Trivia Map
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#compare">
+                            <i class="bi bi-arrows-angle-contract me-1"></i> Compare
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-glow-1"></div>
+        <div class="hero-glow-2"></div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <div class="hero-badge-dot"></div>
+                <span class="hero-badge-text">Explore 12 Football Legends</span>
+            </div>
+            
+            <h1 class="hero-title">
+                Football <span class="text-gradient-green">Nations</span><br>
+                <span class="text-gradient-gold">Hub</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Discover legendary players from around the world. Explore the interactive trivia map, 
+                dive into player profiles, and compare your favorite stars.
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="#map" class="btn btn-hero">
+                    <i class="bi bi-globe"></i> Explore Trivia Map
+                </a>
+                <a href="#compare" class="btn btn-gold">
+                    <i class="bi bi-arrows-angle-contract"></i> Compare Players
+                </a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <i class="bi bi-chevron-down text-muted"></i>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section" id="map">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="section-badge section-badge-green">
+                    <i class="bi bi-globe"></i>
+                    <span>Interactive Map</span>
+                </div>
+                <h2 class="section-title">Global Football Trivia</h2>
+                <p class="section-subtitle">
+                    Click on any country marker to discover legendary players and fascinating football facts from around the world.
+                </p>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-grid"></div>
+                
+                <!-- SVG Continents -->
+                <svg class="map-continents" viewBox="0 0 100 50" preserveAspectRatio="none">
+                    <path d="M10,15 Q15,10 25,12 L28,18 Q22,25 18,22 L12,20 Z" fill="#22c55e"/>
+                    <path d="M22,28 Q28,30 30,35 L28,42 Q24,45 22,40 L20,32 Z" fill="#22c55e"/>
+                    <path d="M42,12 Q50,10 55,14 L54,20 Q48,22 44,18 Z" fill="#22c55e"/>
+                    <path d="M44,24 Q52,22 56,28 L54,38 Q48,42 46,36 L44,28 Z" fill="#22c55e"/>
+                    <path d="M58,10 Q75,8 85,15 L82,28 Q70,32 60,25 Z" fill="#22c55e"/>
+                    <path d="M78,35 Q85,34 88,38 L86,42 Q80,44 78,40 Z" fill="#22c55e"/>
+                </svg>
+                
+                <!-- Country Markers -->
+                <div class="country-marker" style="left: 28%; top: 78%;" data-player="messi">
+                    <div class="marker-dot"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div class="marker-tooltip">
+                        <div class="tooltip-flag">
+                                <img src="assets/flags/AR.png" alt="Argentina Flag" class="flag-img">
+                        </div>
+                        <div class="tooltip-name">Lionel Messi</div>
+                        <div class="tooltip-country">Argentina</div>
+                    </div>
+                </div>
+                
+                <div class="country-marker" style="left: 42%; top: 38%;" data-player="ronaldo">
+                    <div class="marker-dot"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div class="marker-tooltip">
+                        <div class="tooltip-flag">
+                                <img src="assets/flags/PR.png" alt="Portugal Flag" class="flag-img">
+                        </div>
+                        <div class="tooltip-name">Cristiano Ronaldo</div>
+                        <div class="tooltip-country">Portugal</div>
+                    </div>
+                </div>
+                
+                <div class="country-marker" style="left: 47%; top: 35%;" data-player="mbappe">
+                    <div class="marker-dot"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div class="marker-tooltip">
+                        <div class="tooltip-flag">
+                                <img src="assets/flags/FR.png" alt="France Flag" class="flag-img">
+                        </div>
+                        <div class="tooltip-name">Kylian Mbappé</div>
+                        <div class="tooltip-country">France</div>
+                    </div>
+                </div>
+                
+                <div class="country-marker" style="left: 50%; top: 22%;" data-player="haaland">
+                    <div class="marker-dot"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div class="marker-tooltip">
+                        <div class="tooltip-flag">
+                                <img src="assets/flags/NO.png" alt="Norway Flag" class="flag-img">
+                        </div>
+                        <div class="tooltip-name">Erling Haaland</div>
+                        <div class="tooltip-country">Norway</div>
+                    </div>
+                </div>
+                
+                <div class="country-marker" style="left: 48%; top: 32%;" data-player="debruyne">
+                    <div class="marker-dot"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div class="marker-tooltip">
+                        <div class="tooltip-flag">
+                                <img src="assets/flags/BE.png" alt="Belgium Flag" class="flag-img">
+                        </div>
+                        <div class="tooltip-name">Kevin De Bruyne</div>
+                        <div class="tooltip-country">Belgium</div>
+                    </div>
+                </div>
+                
+                <div class="country-marker" style="left: 56%; top: 45%;" data-player="salah">
+                    <div class="marker-dot"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div class="marker-tooltip">
+                        <div class="tooltip-flag">
+                                <img src="assets/flags/EG.png" alt="Egypt Flag" class="flag-img">
+                        </div>
+                        <div class="tooltip-name">Mohamed Salah</div>
+                        <div class="tooltip-country">Egypt</div>
+                    </div>
+                </div>
+                
+                <div class="country-marker" style="left: 52%; top: 37%;" data-player="modric">
+                    <div class="marker-dot"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div class="marker-tooltip">
+                        <div class="tooltip-flag">
+                                <img src="assets/flags/HR.png" alt="Croatia Flag" class="flag-img">
+                        </div>
+                        <div class="tooltip-name">Luka Modrić</div>
+                        <div class="tooltip-country">Croatia</div>
+                    </div>
+                </div>
+                
+                <div class="country-marker" style="left: 32%; top: 65%;" data-player="neymar">
+                    <div class="marker-dot"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div class="marker-tooltip">
+                        <div class="tooltip-flag">
+                                <img src="assets/flags/BR.png" alt="Brazil Flag" class="flag-img">
+                        </div>
+                        <div class="tooltip-name">Neymar Jr</div>
+                        <div class="tooltip-country">Brazil</div>
+                    </div>
+                </div>
+                
+                <div class="country-marker" style="left: 53%; top: 30%;" data-player="lewandowski">
+                    <div class="marker-dot"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div class="marker-tooltip">
+                        <div class="tooltip-flag">
+                                <img src="assets/flags/PL.png" alt="Poland Flag" class="flag-img">
+                        </div>
+                        <div class="tooltip-name">Robert Lewandowski</div>
+                        <div class="tooltip-country">Poland</div>
+                    </div>
+                </div>
+                
+                <div class="country-marker" style="left: 46%; top: 29%;" data-player="kane">
+                    <div class="marker-dot"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div class="marker-tooltip">
+                        <div class="tooltip-flag">
+                                <img src="assets/flags/ENG.png" alt="England Flag" class="flag-img">
+                        </div>
+                        <div class="tooltip-name">Harry Kane</div>
+                        <div class="tooltip-country">England</div>
+                    </div>
+                </div>
+                
+                <div class="country-marker" style="left: 82%; top: 40%;" data-player="son">
+                    <div class="marker-dot"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div class="marker-tooltip">
+                        <div class="tooltip-flag">
+                                <img src="assets/flags/SK.png" alt="South Korea Flag" class="flag-img">
+                        </div>
+                        <div class="tooltip-name">Son Heung-min</div>
+                        <div class="tooltip-country">South Korea</div>
+                    </div>
+                </div>
+                
+                <div class="map-legend">
+                    <div class="legend-dot"></div>
+                    <span>Click a marker to discover a legend</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compare Section -->
+    <section class="section section-dark" id="compare">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="section-badge section-badge-gold">
+                    <span>Head to Head</span>
+                </div>
+                <h2 class="section-title">Player Comparison</h2>
+                <p class="section-subtitle">
+                    Select two legendary players and compare their stats with our interactive radar chart visualization.
+                </p>
+            </div>
+            
+            <div class="row g-4 position-relative">
+                <!-- Player 1 -->
+                <div class="col-md-6">
+                    <div class="player-select-card">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <div class="player-indicator player-indicator-green"></div>
+                            <span class="fw-semibold" style="font-family: 'Oswald', sans-serif;">Player 1</span>
+                        </div>
+                        
+                        <select class="form-select form-select-custom" id="player1Select">
+                            <option value="">Select a player</option>
+                        </select>
+                        
+                        <div class="player-preview" id="player1Preview" style="display: none;">
+                            <img src="" alt="" class="player-preview-img green-ring" id="player1Img">
+                            <div>
+                                <div class="fw-semibold" style="font-family: 'Oswald', sans-serif;" id="player1Name"></div>
+                                <div class="text-muted small" id="player1Info"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- VS Badge (hidden on mobile) -->
+                <div class="position-absolute top-50 start-50 translate-middle d-none d-md-flex" style="z-index: 10;">
+            
+                </div>
+                
+                <!-- Player 2 -->
+                <div class="col-md-6">
+                    <div class="player-select-card">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <div class="player-indicator player-indicator-gold"></div>
+                            <span class="fw-semibold" style="font-family: 'Oswald', sans-serif;">Player 2</span>
+                        </div>
+                        
+                        <select class="form-select form-select-custom" id="player2Select">
+                            <option value="">Select a player</option>
+                        </select>
+                        
+                        <div class="player-preview" id="player2Preview" style="display: none;">
+                            <img src="" alt="" class="player-preview-img gold-ring" id="player2Img">
+                            <div>
+                                <div class="fw-semibold" style="font-family: 'Oswald', sans-serif;" id="player2Name"></div>
+                                <div class="text-muted small" id="player2Info"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chart Container -->
+            <div class="chart-container">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="mb-0" style="font-family: 'Oswald', sans-serif;">Stats Comparison</h3>
+                    <button class="btn btn-outline-light btn-sm" onclick="resetComparison()">
+                        <i class="bi bi-arrow-counterclockwise me-1"></i> Reset
+                    </button>
+                </div>
+                
+                <div id="chartPlaceholder" class="chart-placeholder">
+                    <i class="bi bi-arrows-angle-contract"></i>
+                    <p>Select two players to compare their stats</p>
+                </div>
+                
+                <div id="chartWrapper" style="display: none;">
+                    <canvas id="radarChart" height="400"></canvas>
+                    
+                    <div class="stats-summary" id="statsSummary"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3">
+                <div class="footer-brand">
+                    <div class="footer-logo">⚽</div>
+                    <span style="font-family: 'Oswald', sans-serif;">Football Nations Hub</span>
+                </div>
+                <p class="text-muted small mb-0">Built with passion for the beautiful game</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Player Modal -->
+    <div class="modal fade" id="playerModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header modal-header-custom">
+                    <div class="player-modal-header w-100">
+                        <div class="player-modal-img-container">
+                            <img src="" alt="" class="player-modal-img" id="modalPlayerImg">
+                            <span class="player-modal-flag" id="modalPlayerFlag"></span>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h4 class="mb-1" id="modalPlayerName" style="font-family: 'Oswald', sans-serif;"></h4>
+                            <div class="text-success fw-medium" id="modalPlayerPosition"></div>
+                            <div class="text-muted small" id="modalPlayerClub"></div>
+                            <div class="text-muted small" id="modalPlayerCountry"></div>
+                        </div>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                </div>
+                <div class="modal-body modal-body-custom">
+                    <div class="player-bio" id="modalPlayerBio"></div>
+                    
+                    <div class="player-funfact">
+                        <div class="funfact-label">Fact</div>
+                        <div id="modalPlayerFunfact"></div>
+                    </div>
+
+                    <h5 class="mb-3" style="font-family: 'Oswald', sans-serif;">Achievements</h5>
+
+<div id="modalPlayerAchievements" class="d-flex gap-3 mb-4">
+    <div class="achievement-box">
+        <i class="bi bi-trophy-fill text-warning"></i>
+        <span id="achBallonDor"></span>
+    </div>
+
+    <div class="achievement-box">
+        <i class="bi bi-shield-fill-check text-info"></i>
+        <span id="achUCL"></span>
+    </div>
+
+    <div class="achievement-box">
+        <i class="bi bi-globe text-success"></i>
+        <span id="achWorldCup"></span>
+    </div>
+</div>
+
+                    
+                    <h5 class="mb-3" style="font-family: 'Oswald', sans-serif;">Player Stats</h5>
+                    <div id="modalPlayerStats"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <script src="data/players.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
