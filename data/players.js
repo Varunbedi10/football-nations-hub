@@ -110,7 +110,7 @@ const players = [
         countryCode: "EG",
         country: "Egypt",
         flag: "🇪🇬",
-        image: "assets/images/salah.jpg",
+        image: "assets/images/Salah.jpg",
         position: "Forward",
         club: "Liverpool",
         bio: "The Egyptian King of Liverpool.",
