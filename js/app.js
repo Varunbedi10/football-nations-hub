@@ -65,20 +65,24 @@ function setupNavigation() {
 
 // Show Player Modal
 function showPlayerModal(player) {
+
     document.getElementById('modalPlayerImg').src = player.image;
     document.getElementById('modalPlayerFlag').textContent = player.flag;
     document.getElementById('modalPlayerName').textContent = player.name;
     document.getElementById('modalPlayerPosition').textContent = player.position;
     document.getElementById('modalPlayerClub').textContent = player.club;
-    document.getElementById('modalPlayerCountry').textContent = player.country;
+document.getElementById('modalPlayerCountry').innerHTML = `
+    <img src="assets/flags/${player.countryCode}.png" 
+         class="flag-icon"> ${player.country}
+`;
     document.getElementById('modalPlayerBio').textContent = player.bio;
     document.getElementById('modalPlayerFunfact').textContent = player.funFact;
 
     // Achievements
     if (player.achievements) {
-        achBallonDor.textContent = player.achievements.ballonDor + "x";
-        achUCL.textContent = player.achievements.ucl + "x";
-        achWorldCup.textContent = player.achievements.worldCup + "x";
+        document.getElementById('achBallonDor').textContent = player.achievements.ballonDor + "x";
+        document.getElementById('achUCL').textContent = player.achievements.ucl + "x";
+        document.getElementById('achWorldCup').textContent = player.achievements.worldCup + "x";
     }
 
     // Stats Bars
@@ -97,15 +101,19 @@ function showPlayerModal(player) {
             </div>`;
     });
 
-    // ⭐ NEW: Load Tutorials into Modal
+    // Tutorials
     const tutorialContainer = document.getElementById("modalPlayerTutorials");
     if (player.tutorials && player.tutorials.length > 0) {
         tutorialContainer.innerHTML = `
             <h5 style="font-family:'Oswald',sans-serif;margin-top:20px;">Tutorials</h5>
             ${player.tutorials.map(t =>
-                `<div class="tutorial-item">
-                    <p class="fw-bold">${t.title} <span class="text-muted small">(${t.difficulty})</span></p>
-                    <iframe width="100%" height="200" src="${t.video}" frameborder="0" allowfullscreen></iframe>
+                `<div class="tutorial-item" style="margin-bottom:15px;">
+                    <p class="fw-bold">${t.title} 
+                    <span class="text-muted small">(${t.difficulty})</span></p>
+
+                    <iframe width="100%" height="500" 
+                        src="${t.video}" frameborder="0" allowfullscreen>
+                    </iframe>
                 </div>`
             ).join("")}
         `;
@@ -116,7 +124,7 @@ function showPlayerModal(player) {
     playerModal.show();
 }
 
-// Comparison & Radar Chart
+// Update comparison
 function updateComparison() {
     const p1 = players.find(p => p.id === player1Select.value);
     const p2 = players.find(p => p.id === player2Select.value);
@@ -140,7 +148,10 @@ function updatePreview(player, previewEl, imgId, nameId, infoId) {
     previewEl.style.display = "flex";
     document.getElementById(imgId).src = player.image;
     document.getElementById(nameId).textContent = player.name;
-    document.getElementById(infoId).textContent = `${player.position} • ${player.club}`;
+document.getElementById(infoId).innerHTML = `
+    ${player.position} • ${player.club} <br>
+    <img src="assets/flags/${player.countryCode}.png" class="flag-icon-sm">
+`;
 }
 
 // Radar Chart
@@ -153,12 +164,16 @@ function updateChart(p1, p2) {
             labels: ["Goals", "Pace", "Dribbling", "Passing", "Physical"],
             datasets: [
                 {
-                    label: p1.name, data: Object.values(p1.stats),
-                    borderColor: "#22c55e", backgroundColor: "rgba(34,197,94,0.3)"
+                    label: p1.name,
+                    data: Object.values(p1.stats),
+                    borderColor: "#22c55e",
+                    backgroundColor: "rgba(34,197,94,0.3)"
                 },
                 {
-                    label: p2.name, data: Object.values(p2.stats),
-                    borderColor: "#eab308", backgroundColor: "rgba(234,179,8,0.3)"
+                    label: p2.name,
+                    data: Object.values(p2.stats),
+                    borderColor: "#eab308",
+                    backgroundColor: "rgba(234,179,8,0.3)"
                 }
             ]
         }

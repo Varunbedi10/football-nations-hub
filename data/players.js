@@ -2,6 +2,7 @@ const players = [
     {
         id: "messi",
         name: "Lionel Messi",
+        countryCode: "AR",
         country: "Argentina",
         flag: "🇦🇷",
         image: "assets/images/Messi.jpg",
@@ -22,6 +23,7 @@ const players = [
     {
         id: "ronaldo",
         name: "Cristiano Ronaldo",
+        countryCode: "PR",
         country: "Portugal",
         flag: "🇵🇹",
         image: "assets/images/Ronaldo.jpg",
@@ -42,6 +44,7 @@ const players = [
     {
         id: "mbappe",
         name: "Kylian Mbappé",
+        countryCode: "FR",
         country: "France",
         flag: "🇫🇷",
         image: "assets/images/Mbappe.jpg",
@@ -62,6 +65,7 @@ const players = [
     {
         id: "haaland",
         name: "Erling Haaland",
+        countryCode: "NO",
         country: "Norway",
         flag: "🇳🇴",
         image: "assets/images/Haaland.jpg",
@@ -82,6 +86,7 @@ const players = [
     {
         id: "debruyne",
         name: "Kevin De Bruyne",
+        countryCode: "BE",
         country: "Belgium",
         flag: "🇧🇪",
         image: "assets/images/Kevin.jpg",
@@ -102,6 +107,7 @@ const players = [
     {
         id: "salah",
         name: "Mohamed Salah",
+        countryCode: "EG",
         country: "Egypt",
         flag: "🇪🇬",
         image: "assets/images/salah.jpg",
@@ -122,6 +128,7 @@ const players = [
     {
         id: "modric",
         name: "Luka Modrić",
+        countryCode: "HR",
         country: "Croatia",
         flag: "🇭🇷",
         image: "assets/images/Modric.jpg",
@@ -142,6 +149,7 @@ const players = [
     {
         id: "neymar",
         name: "Neymar Jr",
+        countryCode: "BR",
         country: "Brazil",
         flag: "🇧🇷",
         image: "assets/images/Neymar.jpg",
@@ -162,6 +170,7 @@ const players = [
     {
         id: "lewandowski",
         name: "Robert Lewandowski",
+        countryCode: "PL",
         country: "Poland",
         flag: "🇵🇱",
         image: "assets/images/Robert.avif",
@@ -182,8 +191,9 @@ const players = [
     {
         id: "kane",
         name: "Harry Kane",
+        countryCode: "ENG",
         country: "England",
-        flag: "🏴",
+        flag: "🇪🇬",
         image: "assets/images/Harry.jpg",
         position: "Striker",
         club: "Bayern Munich",
@@ -194,7 +204,7 @@ const players = [
         tutorials: [
             {
                 title: "Finishing Like Kane",
-                video: "hhttps://www.youtube.com/embed/06LGadZ4YMg",
+                video: "https://www.youtube.com/embed/06LGadZ4YMg",
                 difficulty: "Intermediate"
             }
         ]
@@ -202,9 +212,10 @@ const players = [
     {
         id: "son",
         name: "Son Heung-min",
+        countryCode: "KR",
         country: "South Korea",
         flag: "🇰🇷",
-        image: "assets/images/son.jpg",
+        image: "assets/images/Son.jpg",
         position: "Forward",
         club: "Tottenham Hotspur",
         bio: "Asia's greatest ever footballer.",
